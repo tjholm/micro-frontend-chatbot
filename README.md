@@ -28,6 +28,19 @@ To run this project you'll need the [Nitric CLI](https://nitric.io/docs/installa
 
 You'll also want to make sure the project's required dependencies have been installed.
 
+Setup your .env variables:
+
+```bash
+cp .env.template .env
+```
+
+and fill in with your own API keys e.g.
+
+```env
+OPENAI_API_KEY=YOUR_OPEN_AI_KEY
+```
+
+
 ```bash
 # install dependencies
 npm install

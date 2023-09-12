@@ -91,8 +91,17 @@ export class ChatElement extends LitElement {
 
     .chat-controls {
       display: flex;
+      gap: 4px;
     }
 
+    input[type=text] {
+        width: 100%;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
     .chat-controls > input {
       flex: 1;
     }
@@ -100,6 +109,10 @@ export class ChatElement extends LitElement {
     .chat-controls > button {
       width: 36px;
       height: 36px;
+      border: none;
+      color: white;
+      background-color: #2980b9;
+      border-radius: 4px;
     }
 
     .toggle {
