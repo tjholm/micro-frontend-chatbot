@@ -6,7 +6,6 @@
   "private": true,
   "dependencies": {
     "@nitric/sdk": "0.15.0",
-    
     "openai": "^3.3.0"
   },
   "devDependencies": {
@@ -14,9 +13,10 @@
     "dotenv": "^16.0.2",
     "glob": "^10.2.2",
     "js-yaml": "^4.1.0",
-    "nodemon": "^2.0.20",
-    "stmux": "^1.8.4",
     "lit": "^2.8.0",
+    "nodemon": "^2.0.20",
+    "serve": "^14.2.1",
+    "stmux": "^1.8.4",
     "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
     "typescript": "^4.8.3",
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "dev:functions": "nodemon -r dotenv/config ./index.ts",
-    "dev": "stmux -w always -e ERROR -M -m beep,system -- [ -t 'Nitric: Exit using ctrl^a+k' \"nitric start\" .. -t 'Functions' \"wait-port localhost:50051 && npm run dev:functions\" ]",
+    "dev": "stmux -w always -e ERROR -M -m beep,system -- [ -t 'Nitric: Exit using ctrl^a+k' \"nitric start\" .. -t 'Functions' \"wait-port localhost:50051 && npm run dev:functions\" .. -t 'Example' \"serve ./example\" ]",
     "build:components": "tsup ./src/components/*.ts"
   },
   "tsup": {

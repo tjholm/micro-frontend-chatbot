@@ -1,19 +1,20 @@
 <p align="center"><a href="https://nitric.io" target="_blank"><img src="https://raw.githubusercontent.com/nitrictech/nitric/main/docs/assets/nitric-logo.svg" height="120"></a></p>
 
-## About Nitric
+## Nitric Chatbot Component Example
 
-This is a [Nitric](https://nitric.io) TypeScript project, but Nitric is a framework for rapid development of cloud-native and serverless applications in many languages.
+This is a [Nitric](https://nitric.io) TypeScript project, that implements a Chat webcomponent using LitElement, websockets and GPT-4.
 
-Using Nitric you define your apps in terms of the resources they need, then write the code for serverless function based APIs, event subscribers and scheduled jobs.
+## Running this project locally
 
-Apps built with Nitric can be deployed to AWS, Azure or Google Cloud all from the same code base so you can focus on your products, not your cloud provider.
+Ensure dependencies are installed
 
-Nitric makes it easy to:
+```bash
+# install dependencies
+yarn install
 
-- Create smart [serverless functions and APIs](https://nitric.io/docs/apis)
-- Build reliable distributed apps that use [events](https://nitric.io/docs/messaging/topics) and/or [queues](https://nitric.io/docs/messaging/queues)
-- Securely store, retrieve and rotate [secrets](https://nitric.io/docs/secrets)
-- Read and write files from [buckets](https://nitric.io/docs/storage)
+# run locally
+yarn dev dev
+```
 
 ## Learning Nitric
 
@@ -34,3 +35,38 @@ npm install
 # run locally
 npm run dev
 ```
+
+## Deploying this project
+
+This project can easily be deployed to AWS simply run:
+
+```bash
+nitric stack new
+```
+
+select AWS and complete the prompts.
+
+Then run:
+```bash
+nitric up
+```
+
+This will deploy the following resources:
+
+![Architecture](assets/architecture.png)
+
+## Integratining into a website
+
+The example app has a minimal intregration example for local development
+```html
+<html>
+    <head>
+        <script type="module" src="http://localhost:4001/"></script>
+    </head>
+    <body>
+        <chat-element></chat-element>
+    </body>
+</html>
+```
+
+Once your API has been deployed you can simply replace the local API with your deployed API hostname.
