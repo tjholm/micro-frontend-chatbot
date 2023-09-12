@@ -8,5 +8,4 @@ export interface Connection {
   history: Message[];
 }
 
-
 export default collection<Connection>('db');
