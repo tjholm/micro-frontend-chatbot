@@ -1,0 +1,4 @@
+name: micro-frontend-chatbot
+handlers:
+- src/functions/*.ts
+preview-features: []
